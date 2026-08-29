@@ -14,6 +14,9 @@ const PHONE_WHATSAPP = 'https://wa.me/2290197115869'
 const ADDRESS = "Quartier Akpakpa Ayélawadjè 1, 06 BP 0964, Cotonou, République du Bénin"
 const EMAIL = 'lucieverone2002@gmail.com'
 const FACEBOOK_URL = 'https://www.facebook.com/lucieverone/?locale=fr_FR'
+const MAPS_URL = 'https://www.google.com/maps/place/Coll%C3%A8ge+Lucy+Verone/@6.3765434,2.4451832,17z/data=!3m1!4b1!4m6!3m5!1s0x102355397479357f:0x3d5363c6b2fb2f06!8m2!3d6.3765381!4d2.4477581!16s%2Fg%2F11g8w51vsj?entry=ttu'
+const MAPS_EMBED_SRC = 'https://www.google.com/maps?q=6.3765381,2.4477581&z=17&output=embed'
+const HOURS_DISPLAY = 'Du lundi au vendredi : 7h – 19h · Le samedi : 8h – 13h'
 
 const navLinks = [
   { href: '#accueil', label: 'Accueil' },
@@ -118,10 +121,6 @@ onBeforeUnmount(() => {
       <div>
         <div class="hero-visual">
           <img :src="facade1" alt="Façade du Collège Lucie Vérone, Akpakpa, Cotonou" loading="eager">
-        </div>
-        <div class="hero-card">
-          <div class="emblem"><img :src="logo" alt="Logo du Collège Lucie Vérone"></div>
-          <p>Un cadre pensé pour l'apprentissage, l'encadrement et l'épanouissement des élèves.</p>
         </div>
       </div>
     </div>
@@ -421,9 +420,9 @@ onBeforeUnmount(() => {
         <div class="news-card reveal">
           <div class="news-thumb">Rentrée</div>
           <div class="news-body">
-            <span class="news-date">[DATE À RENSEIGNER]</span>
-            <h3>[ACTUALITÉ / SORTIE À RENSEIGNER]</h3>
-            <p>[RÉSUMÉ À RENSEIGNER]</p>
+            <span class="news-date">—</span>
+            <h3>Aucune information prévue pour le moment</h3>
+            <p>Aucune information prévue pour le moment.</p>
           </div>
         </div>
       </div>
@@ -438,12 +437,12 @@ onBeforeUnmount(() => {
       <h2 class="section-title">Informations utiles</h2>
       <p class="section-sub">Toutes les informations pratiques concernant la scolarité de votre enfant.</p>
       <div class="info-grid">
-        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h4>Horaires</h4><p class="placeholder-text">[À RENSEIGNER]</p></div>
-        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h4>Calendrier scolaire</h4><p>Dépôt des dossiers d'inscription à partir du 1er juin. <span class="placeholder-text">[RESTE DU CALENDRIER À RENSEIGNER]</span></p></div>
+        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h4>Horaires</h4><p>{{ HOURS_DISPLAY }}</p></div>
+        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h4>Calendrier scolaire</h4><p>Dépôt des dossiers d'inscription à partir du 1er juin. <span class="placeholder-text">Aucune information supplémentaire prévue pour le moment.</span></p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M4 19V6a2 2 0 012-2h8l6 6v9a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 4v6h6"/></svg></div><h4>Modalités d'inscription</h4><p>Sur dossier (bulletins et relevés de notes de l'année précédente) et test de niveau. Détails au {{ PHONE_DISPLAY }}.</p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Pièces à fournir</h4><p>Bulletins et relevés de notes, photo d'identité, certificat de scolarité, extrait de naissance, chemise à rabat et un paquet de papier rame 80g (obligatoire).</p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div><h4>Contacts administratifs</h4><p>{{ PHONE_DISPLAY }}</p></div>
-        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Informations importantes</h4><p class="placeholder-text">[À RENSEIGNER]</p></div>
+        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Informations importantes</h4><p class="placeholder-text">Aucune information prévue pour le moment.</p></div>
       </div>
     </div>
   </section>
@@ -493,7 +492,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="contact-row">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-            <div><h4>Horaires</h4><p>[HORAIRES À RENSEIGNER]</p></div>
+            <div><h4>Horaires</h4><p>{{ HOURS_DISPLAY }}</p></div>
           </div>
           <div class="contact-row">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
@@ -514,11 +513,16 @@ onBeforeUnmount(() => {
       <h2 class="section-title">Nous trouver</h2>
       <p class="section-sub">{{ ADDRESS }}</p>
       <div class="map-wrap">
-        <div class="map-ph">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#123B63" stroke-width="1.4"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span>Carte Google Maps à intégrer — coordonnées GPS exactes à confirmer</span>
-          <a href="#" class="btn btn-outline-navy btn-sm" style="margin-top:10px;">Itinéraire</a>
-        </div>
+        <iframe
+          class="map-frame"
+          :src="MAPS_EMBED_SRC"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localisation du Collège Lucie Vérone sur Google Maps">
+        </iframe>
+      </div>
+      <div style="text-align:center; margin-top:24px;">
+        <a :href="MAPS_URL" target="_blank" rel="noopener" class="btn btn-outline-navy btn-sm">Itinéraire</a>
       </div>
     </div>
   </section>
@@ -530,10 +534,7 @@ onBeforeUnmount(() => {
       <h2 class="section-title">Suivez-nous</h2>
       <div class="social-row">
         <a class="social-pill" :href="FACEBOOK_URL" target="_blank" rel="noopener">Facebook</a>
-        <a class="social-pill" href="#">Instagram <span class="placeholder-text">[LIEN INSTAGRAM]</span></a>
-        <a class="social-pill" href="#">TikTok <span class="placeholder-text">[LIEN TIKTOK]</span></a>
         <a class="social-pill" :href="PHONE_WHATSAPP">WhatsApp <span class="placeholder-text">{{ PHONE_DISPLAY }}</span></a>
-        <a class="social-pill" href="#">YouTube <span class="placeholder-text">[LIEN YOUTUBE]</span></a>
       </div>
     </div>
   </section>
@@ -576,9 +577,7 @@ onBeforeUnmount(() => {
           <h4>Réseaux sociaux</h4>
           <div class="footer-social">
             <a :href="FACEBOOK_URL" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">f</a>
-            <a href="#" aria-label="Instagram" title="Instagram">ig</a>
-            <a href="#" aria-label="TikTok" title="TikTok">tt</a>
-            <a href="#" aria-label="YouTube" title="YouTube">yt</a>
+            <a :href="PHONE_WHATSAPP" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">wa</a>
           </div>
         </div>
       </div>
