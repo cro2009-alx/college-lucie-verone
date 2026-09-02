@@ -574,7 +574,7 @@ onBeforeUnmount(() => {
           <p>{{ EMAIL }}</p>
         </div>
         <div class="footer-col">
-          <h4>Réseaux Sociaux</h4>
+          <h4>Réseaux sociaux</h4>
           <div class="footer-social">
             <a :href="FACEBOOK_URL" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">f</a>
             <a :href="PHONE_WHATSAPP" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">wa</a>
