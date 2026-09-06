@@ -5,6 +5,12 @@ import facade2 from './assets/gallery/facade-2.jpg'
 import couloir1 from './assets/gallery/couloir-1.jpg'
 import couloir2 from './assets/gallery/couloir-2.jpg'
 import couloir3 from './assets/gallery/couloir-3.jpg'
+import karate1 from './assets/gallery/karate-1.jpg'
+import karate2 from './assets/gallery/karate-2.jpg'
+import spectacle1 from './assets/gallery/spectacle-1.jpg'
+import culture1 from './assets/gallery/culture-1.jpg'
+import spectacle2 from './assets/gallery/spectacle-2.jpg'
+import culture2 from './assets/gallery/culture-2.jpg'
 import logo from './assets/brand/logo.png'
 
 // ===== Coordonnées réelles de l'établissement =====
@@ -35,6 +41,12 @@ const gallery = [
   { src: couloir1, caption: "Couloir et salles de classe à l'étage" },
   { src: couloir2, caption: "Espace intérieur décoré" },
   { src: couloir3, caption: "Vue du couloir et de la cour intérieure" },
+  { src: karate1, caption: "Démonstration de taekwondo lors d'un événement scolaire" },
+  { src: karate2, caption: "Élèves en tenue de taekwondo, discipline sportive au collège" },
+  { src: culture1, caption: "Journée culturelle — élèves en tenues traditionnelles" },
+  { src: culture2, caption: "Cérémonie lors d'une journée culturelle" },
+  { src: spectacle1, caption: "Spectacle des élèves lors d'un événement scolaire" },
+  { src: spectacle2, caption: "Animation et spectacle lors d'un événement scolaire" },
 ]
 
 const scrolled = ref(false)
@@ -233,26 +245,45 @@ onBeforeUnmount(() => {
       <h2 class="section-title">Frais de scolarité</h2>
       <p class="section-sub">Modalités de paiement en trois tranches, selon le cycle.</p>
 
+      <div class="promo-banner reveal">
+        <div class="promo-badge-wrap">
+          <div class="promo-badge">-10%</div>
+          <svg class="gift-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="20" width="32" height="20" rx="2" fill="#C9A24B"/>
+            <rect x="8" y="20" width="32" height="7" fill="#B8912F"/>
+            <rect x="21" y="20" width="6" height="20" fill="#FFFFFF" opacity="0.85"/>
+            <path d="M24 20c-3-6-11-8-11-2 0 3 4 2 11 2z" fill="#0B2A4A"/>
+            <path d="M24 20c3-6 11-8 11-2 0 3-4 2-11 2z" fill="#123B63"/>
+          </svg>
+          <span class="sparkle sparkle-1">✦</span>
+          <span class="sparkle sparkle-2">✦</span>
+        </div>
+        <div>
+          <h4>Offre spéciale rentrée 2026-2027</h4>
+          <p>10% de réduction sur les frais de scolarité pour tout paiement intégral effectué à l'inscription. Renseignements au {{ PHONE_DISPLAY }}.</p>
+        </div>
+      </div>
+
       <div class="fees-grid">
         <div class="fees-card reveal">
-          <h3>Premier cycle</h3>
+          <h3>Premier cycle 6eme en 3eme </h3>
           <table class="fees-table">
             <tbody>
-              <tr><td>1ère tranche (à l'inscription)</td><td>55 000 F</td></tr>
-              <tr><td>2ème tranche (fin novembre)</td><td>45 000 F</td></tr>
-              <tr><td>3ème tranche (fin janvier)</td><td>30 000 F</td></tr>
+              <tr><td>1ère tranche (à l'inscription)</td><td>55 000 F  ( 65 000 F)</td></tr>
+              <tr><td>2ème tranche (fin novembre)</td><td>45 000 F ( 55 000 F)</td></tr>
+              <tr><td>3ème tranche (fin janvier)</td><td>30 000 F (47 000 F)</td></tr>
               <tr class="total"><td>Total</td><td>130 000 F</td></tr>
             </tbody>
           </table>
         </div>
         <div class="fees-card reveal">
-          <h3>Second cycle</h3>
+          <h3>Second cycle 2nd en Tle </h3>
           <table class="fees-table">
             <tbody>
-              <tr><td>1ère tranche (à l'inscription)</td><td>65 000 F</td></tr>
+              <tr><td>1ère tranche (à l'inscription)</td><td>70 000 F</td></tr>
               <tr><td>2ème tranche (fin novembre)</td><td>60 000 F</td></tr>
               <tr><td>3ème tranche (fin janvier)</td><td>47 000 F</td></tr>
-              <tr class="total"><td>Total</td><td>172 000 F</td></tr>
+              <tr class="total"><td>Total</td><td>177 000 F</td></tr>
             </tbody>
           </table>
         </div>
@@ -348,7 +379,12 @@ onBeforeUnmount(() => {
         <div class="life-card reveal">
           <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.2L18.5 21 12 16.8 5.5 21l2-7.8L2 9h7z"/></svg></div>
           <h4>Activités culturelles</h4>
-          <p>Des moments organisés par l'établissement pour enrichir la vie scolaire des élèves.</p>
+          <p>Des événements de danse et de culture organisés par l'établissement pour enrichir la vie scolaire des élèves.</p>
+        </div>
+        <div class="life-card reveal">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M12 2l4 2v6c0 4-2.7 7-4 8-1.3-1-4-4-4-8V4l4-2z"/></svg></div>
+          <h4>Activités sportives</h4>
+          <p>Des séances et démonstrations de taekwondo organisées lors des événements de l'établissement.</p>
         </div>
         <div class="life-card reveal">
           <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
@@ -418,13 +454,54 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <div class="news-card reveal">
-          <div class="news-thumb">Rentrée</div>
+          <div class="news-thumb">Rentrée 2026-2027</div>
           <div class="news-body">
-            <span class="news-date">—</span>
-            <h3>Aucune information prévue pour le moment</h3>
-            <p>Aucune information prévue pour le moment.</p>
+            <span class="news-date">Rentrée 2026-2027</span>
+            <h3>De nouveaux atouts pour nos enfants</h3>
+            <p>Excellents résultats 2025-2026, nouveaux investissements et offre spéciale de rentrée. Voir le détail ci-dessous.</p>
           </div>
         </div>
+      </div>
+
+      <div class="rentree-panel reveal">
+        <div class="eyebrow" style="color:var(--gold-300);">Rentrée 2026-2027</div>
+        <h3>De nouveaux atouts pour nos enfants</h3>
+        <p class="rentree-intro">Le Groupe Scolaire Ronsard-Lucie Vérone se distingue depuis toujours par l'excellence de ses résultats. Cette année, l'établissement investit pour offrir aux enfants un cadre encore plus agréable et attractif.</p>
+
+        <div class="rentree-stats">
+          <div class="rentree-stat"><span class="pct">100%</span><span class="label">de réussite au CEP</span></div>
+          <div class="rentree-stat"><span class="pct">96%</span><span class="label">de réussite au BEPC</span></div>
+          <div class="rentree-stat"><span class="pct">80%</span><span class="label">de réussite au BAC</span></div>
+        </div>
+        <p class="rentree-note">Résultats de l'année scolaire 2025-2026.</p>
+
+        <h4 class="rentree-subtitle">De nouveaux investissements pour nos enfants</h4>
+        <ul class="rentree-list">
+          <li>Amélioration de l'environnement scolaire et des infrastructures</li>
+          <li>Nouveaux équipements et jouets pour la section maternelle</li>
+          <li>Création et rénovation d'aires de jeux</li>
+          <li>Un cadre plus sûr, plus agréable et plus stimulant au quotidien</li>
+        </ul>
+
+        <div class="rentree-offer">
+          <div class="promo-badge-wrap">
+            <div class="promo-badge">-10%</div>
+            <svg class="gift-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="20" width="32" height="20" rx="2" fill="#C9A24B"/>
+              <rect x="8" y="20" width="32" height="7" fill="#B8912F"/>
+              <rect x="21" y="20" width="6" height="20" fill="#FFFFFF" opacity="0.85"/>
+              <path d="M24 20c-3-6-11-8-11-2 0 3 4 2 11 2z" fill="#0B2A4A"/>
+              <path d="M24 20c3-6 11-8 11-2 0 3-4 2-11 2z" fill="#123B63"/>
+            </svg>
+            <span class="sparkle sparkle-1">✦</span>
+            <span class="sparkle sparkle-2">✦</span>
+          </div>
+          <div>
+            <h4>Offre spéciale rentrée</h4>
+            <p>Sur les frais de scolarité, pour tout paiement intégral effectué à l'inscription de la rentrée 2026-2027.</p>
+          </div>
+        </div>
+        <a :href="'tel:' + PHONE_TEL" class="btn btn-gold" style="margin-top:20px;">Renseignements au {{ PHONE_DISPLAY }}</a>
       </div>
     </div>
   </section>

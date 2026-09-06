@@ -536,6 +536,124 @@ header.scrolled{ box-shadow:0 8px 24px rgba(11,42,74,0.08); }
 .fees-extra-card ul{ display:flex; flex-direction:column; gap:8px; }
 .fees-extra-card li{ font-size:0.85rem; color:var(--ink-soft); }
 
+.promo-banner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:linear-gradient(135deg, var(--navy-900), var(--navy-950));
+  border-radius:var(--radius-md);
+  padding:22px 26px;
+  margin-bottom:32px;
+}
+.promo-banner h4{ color:#fff; font-size:1rem; margin-bottom:6px; }
+.promo-banner p{ color:rgba(255,255,255,0.72); font-size:0.86rem; }
+.promo-badge{
+  flex-shrink:0;
+  width:64px; height:64px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--gold-500), var(--gold-600));
+  color:var(--navy-950);
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.1rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 20px rgba(201,162,75,0.4);
+}
+
+.promo-badge-wrap{
+  position:relative;
+  flex-shrink:0;
+  width:64px; height:64px;
+}
+.gift-icon{
+  position:absolute;
+  top:-16px; right:-18px;
+  width:34px; height:34px;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  animation:giftFloat 2.6s ease-in-out infinite;
+  transform-origin:50% 80%;
+}
+@keyframes giftFloat{
+  0%, 100%{ transform:translateY(0) rotate(-8deg); }
+  50%{ transform:translateY(-7px) rotate(8deg); }
+}
+.sparkle{
+  position:absolute;
+  color:var(--gold-300);
+  font-size:0.8rem;
+  animation:sparkleTwinkle 1.8s ease-in-out infinite;
+  pointer-events:none;
+}
+.sparkle-1{ top:-10px; left:-8px; animation-delay:0s; }
+.sparkle-2{ bottom:-6px; right:-4px; font-size:0.6rem; animation-delay:0.6s; }
+@keyframes sparkleTwinkle{
+  0%, 100%{ opacity:0.2; transform:scale(0.7); }
+  50%{ opacity:1; transform:scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce){
+  .gift-icon, .sparkle{ animation:none; }
+}
+
+/* ===== RENTRÉE / PANNEAU D'ACTUALITÉ DÉTAILLÉ ===== */
+.rentree-panel{
+  margin-top:36px;
+  background:linear-gradient(160deg, var(--navy-950), var(--navy-900));
+  border-radius:var(--radius-lg);
+  padding:44px 40px;
+  color:#fff;
+}
+@media (max-width:600px){ .rentree-panel{ padding:32px 24px; } }
+.rentree-panel h3{ color:#fff; font-size:1.5rem; margin-bottom:16px; }
+.rentree-intro{ color:rgba(255,255,255,0.75); font-size:0.95rem; max-width:680px; margin-bottom:28px; }
+.rentree-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  margin-bottom:8px;
+}
+@media (max-width:600px){ .rentree-stats{ grid-template-columns:1fr; } }
+.rentree-stat{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(201,162,75,0.35);
+  border-radius:var(--radius-md);
+  padding:20px;
+  text-align:center;
+}
+.rentree-stat .pct{
+  display:block;
+  font-family:var(--font-display);
+  font-size:2.1rem;
+  font-weight:700;
+  color:var(--gold-300);
+}
+.rentree-stat .label{ font-size:0.82rem; color:rgba(255,255,255,0.68); }
+.rentree-note{ font-size:0.76rem; color:rgba(255,255,255,0.5); font-style:italic; margin-bottom:28px; }
+.rentree-subtitle{ color:#fff; font-size:1rem; margin-bottom:14px; }
+.rentree-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+.rentree-list li{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.8);
+  padding-left:22px;
+  position:relative;
+}
+.rentree-list li::before{
+  content:"✓";
+  position:absolute; left:0; top:0;
+  color:var(--gold-300);
+  font-weight:700;
+}
+.rentree-offer{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(201,162,75,0.35);
+  border-radius:var(--radius-md);
+  padding:20px 24px;
+}
+.rentree-offer h4{ color:#fff; font-size:1rem; margin-bottom:6px; }
+.rentree-offer p{ color:rgba(255,255,255,0.72); font-size:0.86rem; }
+
 /* ===== POURQUOI CHOISIR ===== */
 .why-grid{
   display:grid;
