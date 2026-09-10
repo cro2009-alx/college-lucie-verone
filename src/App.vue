@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import facade1 from './assets/gallery/facade-1.jpg'
+import facade1 from './assets/gallery/fasade.jpg'
 import facade2 from './assets/gallery/facade-2.jpg'
 import couloir1 from './assets/gallery/couloir-1.jpg'
 import couloir2 from './assets/gallery/couloir-2.jpg'
@@ -11,18 +11,23 @@ import spectacle1 from './assets/gallery/spectacle-1.jpg'
 import culture1 from './assets/gallery/culture-1.jpg'
 import spectacle2 from './assets/gallery/spectacle-2.jpg'
 import culture2 from './assets/gallery/culture-2.jpg'
+import infirmerie from './assets/gallery/infirmerie.jpg'
 import logo from './assets/brand/logo.png'
+import heroImage from './assets/gallery/fasade.jpg'
 
 // ===== Coordonnées réelles de l'établissement =====
 const PHONE_DISPLAY = '01 97 11 58 69'
 const PHONE_TEL = '+2290197115869'
 const PHONE_WHATSAPP = 'https://wa.me/2290197115869'
+const PHONE2_DISPLAY = '01 62 95 93 33'
+const PHONE2_TEL = '+2290162959333'
+const PHONE2_WHATSAPP = 'https://wa.me/2290162959333'
 const ADDRESS = "Quartier Akpakpa Ayélawadjè 1, 06 BP 0964, Cotonou, République du Bénin"
 const EMAIL = 'lucieverone2002@gmail.com'
 const FACEBOOK_URL = 'https://www.facebook.com/lucieverone/?locale=fr_FR'
 const MAPS_URL = 'https://www.google.com/maps/place/Coll%C3%A8ge+Lucy+Verone/@6.3765434,2.4451832,17z/data=!3m1!4b1!4m6!3m5!1s0x102355397479357f:0x3d5363c6b2fb2f06!8m2!3d6.3765381!4d2.4477581!16s%2Fg%2F11g8w51vsj?entry=ttu'
 const MAPS_EMBED_SRC = 'https://www.google.com/maps?q=6.3765381,2.4477581&z=17&output=embed'
-const HOURS_DISPLAY = 'Du lundi au vendredi : 7h – 19h · Le samedi : 8h – 13h'
+const HOURS_DISPLAY = 'Du lundi au vendredi : 7h – 19h · Le samedi : 8h – 12h'
 
 const navLinks = [
   { href: '#accueil', label: 'Accueil' },
@@ -41,6 +46,7 @@ const gallery = [
   { src: couloir1, caption: "Couloir et salles de classe à l'étage" },
   { src: couloir2, caption: "Espace intérieur décoré" },
   { src: couloir3, caption: "Vue du couloir et de la cour intérieure" },
+  { src: infirmerie, caption: "Infirmerie de l'établissement" },
   { src: karate1, caption: "Démonstration de taekwondo lors d'un événement scolaire" },
   { src: karate2, caption: "Élèves en tenue de taekwondo, discipline sportive au collège" },
   { src: culture1, caption: "Journée culturelle — élèves en tenues traditionnelles" },
@@ -132,7 +138,7 @@ onBeforeUnmount(() => {
       </div>
       <div>
         <div class="hero-visual">
-          <img :src="facade1" alt="Façade du Collège Lucie Vérone, Akpakpa, Cotonou" loading="eager">
+          <img :src="heroImage" alt="Façade du Collège Lucie Vérone, Akpakpa, Cotonou" loading="eager">
         </div>
       </div>
     </div>
@@ -260,24 +266,35 @@ onBeforeUnmount(() => {
         </div>
         <div>
           <h4>Offre spéciale rentrée 2026-2027</h4>
-          <p>10% de réduction sur les frais de scolarité pour tout paiement intégral effectué à l'inscription. Renseignements au {{ PHONE_DISPLAY }}.</p>
+          <p>10% de réduction sur les frais de scolarité pour tout paiement intégral effectué à l'inscription. Renseignements au {{ PHONE_DISPLAY }} ou au {{ PHONE2_DISPLAY }}.</p>
         </div>
       </div>
 
       <div class="fees-grid">
         <div class="fees-card reveal">
-          <h3>Premier cycle 6eme en 3eme </h3>
+          <h3>Premier cycle 6ème</h3>
           <table class="fees-table">
             <tbody>
-              <tr><td>1ère tranche (à l'inscription)</td><td>55 000 F  ( 65 000 F)</td></tr>
-              <tr><td>2ème tranche (fin novembre)</td><td>45 000 F ( 55 000 F)</td></tr>
-              <tr><td>3ème tranche (fin janvier)</td><td>30 000 F (47 000 F)</td></tr>
+              <tr><td>1ère tranche (à l'inscription)</td><td>55 000 F</td></tr>
+              <tr><td>2ème tranche (fin novembre)</td><td>45 000 F</td></tr>
+              <tr><td>3ème tranche (fin janvier)</td><td>30 000 F</td></tr>
               <tr class="total"><td>Total</td><td>130 000 F</td></tr>
             </tbody>
           </table>
         </div>
         <div class="fees-card reveal">
-          <h3>Second cycle 2nd en Tle </h3>
+          <h3>Premier cycle 5ème en 3ème</h3>
+          <table class="fees-table">
+            <tbody>
+              <tr><td>1ère tranche (à l'inscription)</td><td>65 000 F</td></tr>
+              <tr><td>2ème tranche (fin novembre)</td><td>55 000 F</td></tr>
+              <tr><td>3ème tranche (fin janvier)</td><td>47 000 F</td></tr>
+              <tr class="total"><td>Total</td><td>167 000 F</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="fees-card reveal">
+          <h3>Second cycle 2nd en Tle</h3>
           <table class="fees-table">
             <tbody>
               <tr><td>1ère tranche (à l'inscription)</td><td>70 000 F</td></tr>
@@ -450,7 +467,7 @@ onBeforeUnmount(() => {
           <div class="news-body">
             <span class="news-date">Année en cours</span>
             <h3>Frais de scolarité en 3 tranches</h3>
-            <p>Paiement en trois tranches (inscription, fin novembre, fin janvier), avec des montants distincts selon le premier ou le second cycle. Voir la section « Scolarité ».</p>
+            <p>Paiement en trois tranches (inscription, fin novembre, fin janvier), avec des montants distincts selon le cycle. Voir la section « Scolarité ».</p>
           </div>
         </div>
         <div class="news-card reveal">
@@ -501,7 +518,10 @@ onBeforeUnmount(() => {
             <p>Sur les frais de scolarité, pour tout paiement intégral effectué à l'inscription de la rentrée 2026-2027.</p>
           </div>
         </div>
-        <a :href="'tel:' + PHONE_TEL" class="btn btn-gold" style="margin-top:20px;">Renseignements au {{ PHONE_DISPLAY }}</a>
+        <div class="hero-btns" style="margin-top:20px;">
+          <a :href="'tel:' + PHONE_TEL" class="btn btn-gold">Appeler le {{ PHONE_DISPLAY }}</a>
+          <a :href="'tel:' + PHONE2_TEL" class="btn btn-outline-light">Ou le {{ PHONE2_DISPLAY }}</a>
+        </div>
       </div>
     </div>
   </section>
@@ -516,9 +536,9 @@ onBeforeUnmount(() => {
       <div class="info-grid">
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h4>Horaires</h4><p>{{ HOURS_DISPLAY }}</p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h4>Calendrier scolaire</h4><p>Dépôt des dossiers d'inscription à partir du 1er juin. <span class="placeholder-text">Aucune information supplémentaire prévue pour le moment.</span></p></div>
-        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M4 19V6a2 2 0 012-2h8l6 6v9a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 4v6h6"/></svg></div><h4>Modalités d'inscription</h4><p>Sur dossier (bulletins et relevés de notes de l'année précédente) et test de niveau. Détails au {{ PHONE_DISPLAY }}.</p></div>
+        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M4 19V6a2 2 0 012-2h8l6 6v9a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 4v6h6"/></svg></div><h4>Modalités d'inscription</h4><p>Sur dossier (bulletins et relevés de notes de l'année précédente) et test de niveau. Détails au {{ PHONE_DISPLAY }} ou au {{ PHONE2_DISPLAY }}.</p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Pièces à fournir</h4><p>Bulletins et relevés de notes, photo d'identité, certificat de scolarité, extrait de naissance, chemise à rabat et un paquet de papier rame 80g (obligatoire).</p></div>
-        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div><h4>Contacts administratifs</h4><p>{{ PHONE_DISPLAY }}</p></div>
+        <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div><h4>Contacts administratifs</h4><p>{{ PHONE_DISPLAY }} · {{ PHONE2_DISPLAY }}</p></div>
         <div class="info-card"><div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8912F" stroke-width="1.6"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Informations importantes</h4><p class="placeholder-text">Aucune information prévue pour le moment.</p></div>
       </div>
     </div>
@@ -531,9 +551,12 @@ onBeforeUnmount(() => {
         <div class="enroll-text">
           <div class="eyebrow">Admissions</div>
           <h2>Inscrivez votre enfant</h2>
-          <p>Pour connaître les conditions d'admission, les pièces à fournir et les modalités d'inscription, contactez directement l'administration du Collège Lucie Vérone au {{ PHONE_DISPLAY }}.</p>
+          <p>Pour connaître les conditions d'admission, les pièces à fournir et les modalités d'inscription, contactez directement l'administration du Collège Lucie Vérone au {{ PHONE_DISPLAY }} ou au {{ PHONE2_DISPLAY }}.</p>
         </div>
-        <a :href="'tel:' + PHONE_TEL" class="btn btn-navy">Appeler le {{ PHONE_DISPLAY }}</a>
+        <div class="enroll-btns">
+          <a :href="'tel:' + PHONE_TEL" class="btn btn-navy">Appeler le {{ PHONE_DISPLAY }}</a>
+          <a :href="'tel:' + PHONE2_TEL" class="btn btn-outline-navy">Ou le {{ PHONE2_DISPLAY }}</a>
+        </div>
       </div>
     </div>
   </section>
@@ -546,11 +569,20 @@ onBeforeUnmount(() => {
         <h2 class="section-title">Nous contacter</h2>
         <p style="color:var(--ink-soft); margin-bottom:20px;">Collège Lucie Vérone — Groupe Scolaire Ronsard-Lucie Vérone</p>
 
-        <div class="contact-highlight">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#071B33" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div>
-          <div>
-            <div class="label">Numéro à contacter</div>
-            <div class="num">{{ PHONE_DISPLAY }}</div>
+        <div class="contact-highlight-group">
+          <div class="contact-highlight">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071B33" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div>
+            <div>
+              <div class="label">Numéro 1</div>
+              <div class="num">{{ PHONE_DISPLAY }}</div>
+            </div>
+          </div>
+          <div class="contact-highlight">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071B33" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div>
+            <div>
+              <div class="label">Numéro 2</div>
+              <div class="num">{{ PHONE2_DISPLAY }}</div>
+            </div>
           </div>
         </div>
 
@@ -561,7 +593,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="contact-row">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 01-8.9 8.4A8.7 8.7 0 013 11a8.5 8.5 0 0116.7-2.3L21 11.5z"/></svg></div>
-            <div><h4>WhatsApp</h4><p>{{ PHONE_DISPLAY }}</p></div>
+            <div><h4>WhatsApp</h4><p>{{ PHONE_DISPLAY }} · {{ PHONE2_DISPLAY }}</p></div>
           </div>
           <div class="contact-row">
             <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
@@ -611,7 +643,8 @@ onBeforeUnmount(() => {
       <h2 class="section-title">Suivez-nous</h2>
       <div class="social-row">
         <a class="social-pill" :href="FACEBOOK_URL" target="_blank" rel="noopener">Facebook</a>
-        <a class="social-pill" :href="PHONE_WHATSAPP">WhatsApp <span class="placeholder-text">{{ PHONE_DISPLAY }}</span></a>
+        <a class="social-pill" :href="PHONE_WHATSAPP" target="_blank" rel="noopener">WhatsApp <span class="placeholder-text">{{ PHONE_DISPLAY }}</span></a>
+        <a class="social-pill" :href="PHONE2_WHATSAPP" target="_blank" rel="noopener">WhatsApp <span class="placeholder-text">{{ PHONE2_DISPLAY }}</span></a>
       </div>
     </div>
   </section>
@@ -621,10 +654,11 @@ onBeforeUnmount(() => {
     <div class="container">
       <div class="emblem"><img :src="logo" alt="Logo du Collège Lucie Vérone"></div>
       <h2>Une question concernant notre établissement ?</h2>
-      <p>Notre équipe reste à votre disposition pour vous renseigner au {{ PHONE_DISPLAY }}.</p>
+      <p>Notre équipe reste à votre disposition pour vous renseigner au {{ PHONE_DISPLAY }} ou au {{ PHONE2_DISPLAY }}.</p>
       <div class="hero-btns">
         <a :href="'tel:' + PHONE_TEL" class="btn btn-gold">Appeler le {{ PHONE_DISPLAY }}</a>
-        <a :href="PHONE_WHATSAPP" class="btn btn-outline-light">Nous écrire sur WhatsApp</a>
+        <a :href="'tel:' + PHONE2_TEL" class="btn btn-outline-light">Ou le {{ PHONE2_DISPLAY }}</a>
+        <a :href="PHONE_WHATSAPP" target="_blank" rel="noopener" class="btn btn-outline-light">Nous écrire sur WhatsApp</a>
       </div>
     </div>
   </section>
@@ -648,6 +682,7 @@ onBeforeUnmount(() => {
           <h4>Coordonnées</h4>
           <p>{{ ADDRESS }}</p>
           <p>{{ PHONE_DISPLAY }}</p>
+          <p>{{ PHONE2_DISPLAY }}</p>
           <p>{{ EMAIL }}</p>
         </div>
         <div class="footer-col">
