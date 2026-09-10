@@ -129,7 +129,7 @@ onBeforeUnmount(() => {
         <div class="hero-eyebrow">Établissement scolaire · Akpakpa, Cotonou</div>
         <h1>COLLÈGE<br><em>LUCIE VÉRONE</em></h1>
         <p class="hero-tagline">« Discipline · Travail · Excellence »</p>
-        <p class="desc">Bienvenue sur le site officiel du Collège Lucie Vérone, membre du Groupe Scolaire Ronsard-Lucie Vérone. Découvrez notre établissement, notre environnement éducatif, nos activités et les informations utiles aux élèves et aux parents.</p>
+        <p class="desc">Bienvenue Sur le site officiel du Collège Lucie Vérone, membre du Groupe Scolaire Ronsard-Lucie Vérone. Découvrez notre établissement, notre environnement éducatif, nos activités et les informations utiles aux élèves et aux parents.</p>
         <div class="hero-btns">
           <a href="#etablissement" class="btn btn-gold">Découvrir l'établissement</a>
           <a href="#contact" class="btn btn-outline-light">Nous contacter</a>
